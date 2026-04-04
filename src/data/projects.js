@@ -4,7 +4,7 @@ export const projects = [
     title: 'Bloom',
     description: 'A gamified productivity system that visualizes progress as growth',
     tags: ['Flutter', 'Firebase', 'Productivity'],
-    image: '/src/assets/bloom/bloom-cover.png',
+    image: '/assets/bloom/bloom-cover.png',
 
     metrics: [
       'Garden-based progression system',
@@ -32,10 +32,10 @@ export const projects = [
     status: 'Live',
 
     images: [
-      '/src/assets//bloom/bloom-1.png',
-      '/src/assets/bloom/bloom-2.png',
-      '/src/assets/bloom/bloom-3.png',
-      '/src/assets/bloom/bloom-4.png'
+      '/assets//bloom/bloom-1.png',
+      '/assets/bloom/bloom-2.png',
+      '/assets/bloom/bloom-3.png',
+      '/assets/bloom/bloom-4.png'
     ]
   },
 
@@ -44,7 +44,7 @@ export const projects = [
     title: 'Block Editor',
     description: 'A fully custom Notion-style editor built from scratch in Flutter',
     tags: ['Flutter', 'Dart', 'Editor'],
-    image: '/src/assets/block-editor/block-editor-cover.png',
+    image: '/assets/block-editor/block-editor-cover.png',
 
     metrics: [
       'Fully custom block architecture',
@@ -72,10 +72,10 @@ export const projects = [
     status: 'In Progress',
 
     images: [
-      '/src/assets/block-editor/block-editor-1.png',
-      '/src/assets/block-editor/block-editor-2.png',
-      '/src/assets/block-editor/block-editor-3.png',
-      '/src/assets/block-editor/block-editor-4.png',
+      '/assets/block-editor/block-editor-1.png',
+      '/assets/block-editor/block-editor-2.png',
+      '/assets/block-editor/block-editor-3.png',
+      '/assets/block-editor/block-editor-4.png',
     ]
   },
 
@@ -119,7 +119,7 @@ export const projects = [
     title: 'Usverse',
     description: 'A shared digital space designed for couples',
     tags: ['Flutter', 'Firebase', 'Social'],
-    image: '/src/assets/usverse/usverse-cover.png',
+    image: '/assets/usverse/usverse-cover.png',
 
     metrics: [
       'Shared space architecture',
@@ -146,9 +146,9 @@ export const projects = [
     status: 'Live',
 
     images: [
-      '/src/assets/usverse/usverse-1.png',
-      '/src/assets/usverse/usverse-2.png',
-      '/src/assets/usverse/usverse-3.png',
+      '/assets/usverse/usverse-1.png',
+      '/assets/usverse/usverse-2.png',
+      '/assets/usverse/usverse-3.png',
     ]
   },
 
@@ -157,7 +157,7 @@ export const projects = [
     title: 'Flow Launcher',
     description: 'A lightweight, customizable Android launcher built with Flutter',
     tags: ['Flutter', 'Android', 'UI'],
-    // image: '/src/assets/flow-launcher-cover.png',
+    // image: '/assets/flow-launcher-cover.png',
 
     metrics: [
       'Material-based UI system',
