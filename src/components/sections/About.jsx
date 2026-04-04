@@ -5,7 +5,8 @@ export default function About() {
       <div>
         <h2 className="text-2xl mb-4">About</h2>
         <p className="text-subtext">
-          Frontend engineer focused on building scalable, system-driven applications with strong UX thinking.
+          Frontend engineer focused on building scalable systems with strong UX thinking.
+          I care about performance, structure, and clarity in every product I build.
         </p>
       </div>
     </section>

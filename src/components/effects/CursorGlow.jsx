@@ -9,7 +9,7 @@ export default function CursorGlow() {
     glow.style.width = '200px'
     glow.style.height = '200px'
     glow.style.borderRadius = '50%'
-    glow.style.background = 'radial-gradient(circle, rgba(108,123,255,0.12), transparent 70%)'
+    glow.style.background = 'radial-gradient(circle, rgba(108,123,255,0.12), transparent 40%)'
     glow.style.filter = 'blur(40px)'
     glow.style.zIndex = '0'
 
