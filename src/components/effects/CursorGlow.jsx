@@ -2,23 +2,54 @@ import { useEffect } from 'react'
 
 export default function CursorGlow() {
   useEffect(() => {
-    const glow = document.createElement('div')
+    const cursor = document.createElement('div')
+    const dot = document.createElement('div')
 
-    glow.style.position = 'fixed'
-    glow.style.pointerEvents = 'none'
-    glow.style.width = '200px'
-    glow.style.height = '200px'
-    glow.style.borderRadius = '50%'
-    glow.style.background = 'radial-gradient(circle, rgba(108,123,255,0.12), transparent 40%)'
-    glow.style.filter = 'blur(40px)'
-    glow.style.zIndex = '0'
+    cursor.className = 'custom-cursor'
+    dot.className = 'custom-cursor-dot'
 
-    document.body.appendChild(glow)
+    document.body.appendChild(cursor)
+    document.body.appendChild(dot)
 
-    window.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX - 100 + 'px'
-      glow.style.top = e.clientY - 100 + 'px'
-    })
+    let x = 0
+    let y = 0
+    let tx = 0
+    let ty = 0
+
+    const move = (e) => {
+      x = e.clientX
+      y = e.clientY
+
+      dot.style.left = x + 'px'
+      dot.style.top = y + 'px'
+
+      const target = e.target.closest('a, button, .project-card')
+
+      if (target) {
+        cursor.classList.add('cursor-hover')
+      } else {
+        cursor.classList.remove('cursor-hover')
+      }
+    }
+
+    const animate = () => {
+      tx += (x - tx) * 0.15
+      ty += (y - ty) * 0.15
+
+      cursor.style.left = tx + 'px'
+      cursor.style.top = ty + 'px'
+
+      requestAnimationFrame(animate)
+    }
+
+    window.addEventListener('mousemove', move)
+    animate()
+
+    return () => {
+      window.removeEventListener('mousemove', move)
+      document.body.removeChild(cursor)
+      document.body.removeChild(dot)
+    }
   }, [])
 
   return null

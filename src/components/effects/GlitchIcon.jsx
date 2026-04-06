@@ -45,7 +45,7 @@ export default function GlitchIcon() {
 
   return (
     <div className="mb-4 flex justify-center relative">
-      <div className="absolute w-16 h-16 bg-[#8E9BFF]/20 blur-2xl scale-110 rounded-xl rotate-6" />
+      <div className="absolute w-16 h-16 bg-[#8E9BFF]/20 blur-xl scale-110 rounded-xl rotate-6" />
       <div
         className={`relative z-10 transition ${glitch ? 'translate-x-[2px]' : ''
           }`}

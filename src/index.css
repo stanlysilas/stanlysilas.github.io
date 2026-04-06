@@ -10,25 +10,51 @@
     --subtext: #A1A1AA;
 }
 
+body,
+section,
+div,
+button,
+a {
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .hero-glow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(142,155,255,0.15), transparent 70%);
-  filter: blur(80px);
-  z-index: 0;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(142, 155, 255, 0.15), transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
 }
 
 .light .hero-glow {
-  background: radial-gradient(circle, rgba(142,155,255,0.12), transparent 70%);
+    background: radial-gradient(circle, rgba(142, 155, 255, 0.12), transparent 70%);
 }
 
 .text-accent {
     color: #8E9BFF;
 }
 
+.text-primary {
+    color: var(--text);
+}
+
+.text-subtext {
+    color: var(--subtext);
+}
+
+.bg-surface {
+    background: var(--surface);
+}
+
+.bg-base {
+    background: var(--bg);
+}
+
 svg {
-  stroke-width: 1.5;
+    stroke-width: 1.5;
 }
 
 .light {
@@ -44,16 +70,22 @@ svg {
 }
 
 .navbar {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .light .navbar {
-  background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .light .btn-secondary {
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.light .btn-secondary.btn-secondary:hover {
+    background: #0B0B0F;
+    color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -67,8 +99,8 @@ svg {
 }
 
 .light footer {
-  background: rgba(0, 0, 0, 0.02);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .project-card {
@@ -77,13 +109,50 @@ svg {
 
 .light .project-card {
     background: white;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+    background: #111117;
+}
+
+.light .project-image {
+    background: #ffffff;
 }
 
 body {
+    cursor: none;
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(108, 123, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+}
+
+.custom-cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: rgba(108, 123, 255, 0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.custom-cursor.cursor-hover {
+    transform: translate(-50%, -50%) scale(1.6);
+    border-color: rgba(108, 123, 255, 0.7);
 }
 
 a {
@@ -107,8 +176,4 @@ body::before {
     background-image:
         linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-}
-
-html {
-    scroll-behavior: smooth;
 }

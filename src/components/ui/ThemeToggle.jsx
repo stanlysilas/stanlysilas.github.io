@@ -1,15 +1,34 @@
 import { useContext } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
+import { Sun, Moon } from 'lucide-react'
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useContext(ThemeContext)
 
+  const isDark = theme === 'dark'
+
   return (
     <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="btn-secondary text-sm px-3 py-1 border border-white/10 rounded-full hover:scale-95 active:scale-90"
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      className="relative w-14 h-8 rounded-full border 
+      border-[color:var(--subtext)]/20 
+      bg-[color:var(--surface)] 
+      flex items-center px-1 transition"
     >
-      {theme === 'dark' ? 'Light' : 'Dark'}
+      <div
+        className={`absolute w-6 h-6 rounded-full flex items-center justify-center
+        transition-all duration-300 ease-in-out
+        ${isDark 
+          ? 'translate-x-0 bg-[var(--text)] text-[var(--bg)]' 
+          : 'translate-x-6 bg-[var(--text)] text-[var(--bg)]'
+        }`}
+      >
+        {isDark ? (
+          <Moon size={14} />
+        ) : (
+          <Sun size={14} />
+        )}
+      </div>
     </button>
   )
 }

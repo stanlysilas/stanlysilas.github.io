@@ -1,5 +1,6 @@
 import { projects } from '../../data/projects'
 import ProjectCard from '../ui/ProjectCard'
+import { Link } from 'react-router-dom'
 
 export default function FeaturedProjects() {
   return (
@@ -16,6 +17,18 @@ export default function FeaturedProjects() {
         {projects.slice(0, 3).map(p => (
           <ProjectCard key={p.slug} project={p} />
         ))}
+      </div>
+      <div className="mt-16 flex justify-center">
+        <Link
+          to="/projects"
+          className="btn-secondary px-6 py-3 rounded-full text-sm font-medium transition 
+          border border-[color:var(--text)]/10 
+          hover:bg-[var(--text)]
+          hover:text-[var(--bg)]
+          hover:scale-105 active:scale-95"
+        >
+          View All Projects
+        </Link>
       </div>
     </section>
   )

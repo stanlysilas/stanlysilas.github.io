@@ -3,7 +3,9 @@ import { createContext, useEffect, useState } from 'react'
 export const ThemeContext = createContext()
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(
+    localStorage.getItem('theme') || 'dark'
+  )
 
   useEffect(() => {
     const saved = localStorage.getItem('theme')
@@ -11,7 +13,11 @@ export default function ThemeProvider({ children }) {
   }, [])
 
   useEffect(() => {
-    document.documentElement.classList.toggle('light', theme === 'light')
+    const root = document.documentElement
+
+    root.classList.remove('light', 'dark')
+    root.classList.add(theme)
+
     localStorage.setItem('theme', theme)
   }, [theme])
 

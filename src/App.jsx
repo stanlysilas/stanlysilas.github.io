@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect } from "react";
+import useSmoothScroll from './hooks/useSmoothScroll'
 
 import Home from './pages/Home'
 import Projects from './pages/Projects'
@@ -12,9 +13,17 @@ import CursorGlow from './components/effects/CursorGlow'
 function AnimatedRoutes() {
   const location = useLocation()
 
-    useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
+
+  useEffect(() => {
+    const redirect = sessionStorage.redirect
+    if (redirect) {
+      sessionStorage.removeItem('redirect')
+      window.history.replaceState(null, '', redirect)
+    }
+  }, [])
 
   return (
     <AnimatePresence mode="wait">
@@ -36,6 +45,8 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  useSmoothScroll()
+
   return (
     <BrowserRouter>
       <CursorGlow />
