@@ -5,7 +5,7 @@ import GlitchIcon from '../effects/GlitchIcon'
 
 export default function Hero() {
   return (
-    <section className="min-h-[85vh] flex flex-col justify-center items-center text-center px-6">
+    <section className="min-h-[85vh] mx-auto flex flex-col justify-center items-center text-center px-6">
       <GlitchIcon />
 
       <div className="mt-6 flex flex-col items-center">
@@ -45,7 +45,7 @@ export default function Hero() {
 
       </div>
 
-      <div className="mt-8 flex gap-4">
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
 
         <Link
           to="/projects"

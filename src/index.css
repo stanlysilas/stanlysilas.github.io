@@ -121,10 +121,17 @@ svg {
 }
 
 body {
+    width: 100%;
+    overflow-x: hidden;
     cursor: none;
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .custom-cursor {

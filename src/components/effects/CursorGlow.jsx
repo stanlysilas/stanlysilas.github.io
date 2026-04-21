@@ -1,7 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function CursorGlow() {
+  const [enabled, setEnabled] = useState(false)
+
   useEffect(() => {
+    const media = window.matchMedia('(pointer: fine)')
+
+    const update = () => setEnabled(media.matches)
+    update()
+
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
+
     const cursor = document.createElement('div')
     const dot = document.createElement('div')
 
@@ -50,7 +64,7 @@ export default function CursorGlow() {
       document.body.removeChild(cursor)
       document.body.removeChild(dot)
     }
-  }, [])
+  }, [enabled])
 
   return null
 }
