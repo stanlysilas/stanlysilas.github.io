@@ -3,6 +3,7 @@ import About from '../components/sections/About'
 import FeaturedProjects from '../components/sections/FeaturedProjects'
 import Contact from '../components/sections/Contact'
 import ScrollReveal from '../components/effects/ScrollReveal'
+import GithubActivity from '../components/sections/GithubActivity'
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
       </ScrollReveal>
       <ScrollReveal>
         <FeaturedProjects />
+      </ScrollReveal>
+      <ScrollReveal>
+        <GithubActivity />
       </ScrollReveal>
       <ScrollReveal>
         <Contact />

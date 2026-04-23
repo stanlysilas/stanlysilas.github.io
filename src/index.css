@@ -120,6 +120,12 @@ svg {
     background: #ffffff;
 }
 
+@media (pointer: fine) {
+    body {
+        cursor: none;
+    }
+}
+
 body {
     width: 100%;
     overflow-x: hidden;
@@ -132,6 +138,18 @@ body {
 html {
     width: 100%;
     overflow-x: hidden;
+}
+
+.react-activity-calendar {
+    color: var(--text);
+}
+
+.react-activity-calendar__legend {
+    display: none;
+}
+
+.react-activity-calendar rect {
+    rx: 2px;
 }
 
 .custom-cursor {
