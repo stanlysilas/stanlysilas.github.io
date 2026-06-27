@@ -2,7 +2,8 @@ export const projects = [
   {
     slug: 'bloom',
     title: 'Bloom',
-    description: 'A gamified productivity system that visualizes progress as growth',
+    description:
+      'A gamified productivity system that visualizes progress as growth',
     tags: ['Flutter', 'Firebase', 'Productivity'],
     image: '/assets/bloom/bloom-cover.png',
 
@@ -29,6 +30,7 @@ export const projects = [
 
     github: 'https://bloomproductive.framer.website',
     live: 'https://bloom-da824.web.app/',
+    link: 'https://bloomproductive.framer.website/',
     status: 'Live',
 
     images: [
@@ -40,9 +42,70 @@ export const projects = [
   },
 
   {
+    slug: 'bloomos',
+    title: 'BloomOS',
+    description:
+      'A privacy-focused Android operating system built from source with an emphasis on security, transparency, and long-term maintainability.',
+    tags: ['Android', 'AOSP', 'LineageOS', 'Linux', 'C++', 'Security'],
+
+    image: '/assets/bloomos/bloomos-cover.png',
+
+    metrics: [
+      'Custom Android OS built from source',
+      'Device bring-up and hardware enablement',
+      'Framework customization and system rebranding'
+    ],
+
+    problem:
+      'Many Android devices lose software support quickly while modern operating systems increasingly prioritize data collection over user privacy. Existing custom ROMs often target enthusiasts without providing a cohesive privacy-first ecosystem.',
+
+    approach:
+      'Building BloomOS as a privacy and security focused Android distribution based on LineageOS. The project involves device bring-up, framework customization, hardware abstraction debugging, vendor integration, and long-term platform architecture while preserving compatibility with existing Android applications.',
+
+    features: [
+      'Privacy-first Android experience',
+      'Custom operating system branding and framework',
+      'Hardware bring-up for unsupported devices',
+      'OTA update infrastructure',
+      'Security-focused system configuration',
+      'Modular architecture for future device support',
+      'Open-source development workflow'
+    ],
+
+    stack: [
+      'AOSP',
+      'LineageOS',
+      'Android',
+      'Linux',
+      'Git',
+      'Java',
+      'C++',
+      'Shell',
+      'XML'
+    ],
+
+    github: 'https://github.com/BloomOSLabs',
+
+    live: 'https://bloomoslabs.github.io/',
+
+    link: 'https://bloomoslabs.github.io/',
+
+    status: 'Live',
+
+    images: [
+      '/assets/bloomos/bloomos-1.png',
+      '/assets/bloomos/bloomos-2.png',
+      '/assets/bloomos/bloomos-3.png',
+      '/assets/bloomos/bloomos-4.png',
+      '/assets/bloomos/bloomos-5.png'
+    ]
+  },
+
+  {
     slug: 'block_editor',
     title: 'Block Editor',
-    description: 'A fully custom Notion-style editor built from scratch in Flutter',
+    description:
+      'A fully custom Notion-style editor built from scratch in Flutter',
     tags: ['Flutter', 'Dart', 'Editor'],
     image: '/assets/block-editor/block-editor-cover.png',
 
@@ -69,20 +132,22 @@ export const projects = [
 
     github: 'https://github.com/stanlysilas/block_editor',
     live: 'https://stanlysilas.github.io/block_editor/',
-    status: 'In Progress',
+    link: 'https://pub.dev/packages/block_editor',
+    status: 'Beta',
 
     images: [
       '/assets/block-editor/block-editor-1.png',
       '/assets/block-editor/block-editor-2.png',
       '/assets/block-editor/block-editor-3.png',
-      '/assets/block-editor/block-editor-4.png',
+      '/assets/block-editor/block-editor-4.png'
     ]
   },
 
   {
     slug: 'aetheros',
     title: 'AetherOS',
-    description: 'A lightweight Fedora-based OS focused on performance and control',
+    description:
+      'A lightweight Fedora-based OS focused on performance and control',
     tags: ['Linux', 'System', 'UI'],
     image: '',
 
@@ -148,14 +213,15 @@ export const projects = [
     images: [
       '/assets/usverse/usverse-1.png',
       '/assets/usverse/usverse-2.png',
-      '/assets/usverse/usverse-3.png',
+      '/assets/usverse/usverse-3.png'
     ]
   },
 
   {
     slug: 'flow_launcher',
     title: 'Flow Launcher',
-    description: 'A lightweight, customizable Android launcher built with Flutter',
+    description:
+      'A lightweight, customizable Android launcher built with Flutter',
     tags: ['Flutter', 'Android', 'UI'],
     // image: '/assets/flow-launcher-cover.png',
 

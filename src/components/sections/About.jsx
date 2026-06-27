@@ -3,9 +3,9 @@ export default function About() {
     <section className="py-28 pb-40 text-center max-w-6xl mx-auto scroll-mt-28 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[radial-gradient(circle,rgba(108,123,255,0.08),transparent_70%)] blur-xl pointer-events-none" />
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <div className="w-24 h-24 mx-auto rounded-full overflow-hidden bg-[#111117] shadow-sm">
+        <div className="profile-image w-48 h-48 mx-auto rounded-3xl overflow-hidden bg-[#111117] shadow-sm">
           <img
-            src="/assets/profile.jpeg"
+            src="/assets/profile.jpg"
             className="w-full h-full object-cover"
           />
         </div>

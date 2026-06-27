@@ -9,11 +9,11 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto h-full flex items-center justify-between px-6">
         <Link to="/" className="font-bold">Stanly</Link>
         <div className="flex items-center gap-6">
-          <Link to="/projects" className={`transition ${pathname === '/projects'
+          <Link to="/projects" className={`link-underline transition ${pathname === '/projects'
             ? 'text-primary'
             : 'text-subtext hover:text-primary'
             }`}>Projects</Link>
-          <a href="/#contact" className="text-subtext transition">Contact</a>
+          <a href="/#contact" className="link-underline text-subtext transition">Contact</a>
           <ThemeToggle />
         </div>
       </div>

@@ -140,16 +140,102 @@ html {
     overflow-x: hidden;
 }
 
-.react-activity-calendar {
-    color: var(--text);
+.profile-image {
+    border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.react-activity-calendar__legend {
-    display: none;
+.light .profile-image {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+.heatmap-card {
+    background: rgba(17, 17, 23, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+}
+
+.light .heatmap-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.react-activity-calendar {
+  padding: 8px;
+}
+
+.react-activity-calendar svg {
+  overflow: visible;
+}
+
+.react-activity-calendar rect:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
 }
 
 .react-activity-calendar rect {
-    rx: 2px;
+  rx: 3px;
+  transition: all 0.2s ease;
+}
+
+.react-activity-calendar rect[data-level="1"] {
+  fill: #2d3650;
+}
+
+.react-activity-calendar rect[data-level="2"] {
+  fill: #4c5bd4;
+}
+
+.react-activity-calendar rect[data-level="3"] {
+  fill: #6c7bff;
+}
+
+.react-activity-calendar rect[data-level="4"] {
+  fill: var(--accent);
+}
+
+.react-activity-calendar rect[data-level="3"],
+.react-activity-calendar rect[data-level="4"] {
+  box-shadow: 0 0 6px rgba(142, 155, 255, 0.4);
+}
+
+.light .react-activity-calendar rect {
+  fill: #ebedf0;
+}
+
+.light .react-activity-calendar rect[data-level="1"] {
+  fill: #c6d0ff;
+}
+
+.light .react-activity-calendar rect[data-level="2"] {
+  fill: #a5b4ff;
+}
+
+.light .react-activity-calendar rect[data-level="3"] {
+  fill: var(--accent);
+}
+
+.light .react-activity-calendar rect[data-level="4"] {
+  fill: #6c7bff;
 }
 
 .custom-cursor {
