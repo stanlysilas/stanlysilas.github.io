@@ -1,0 +1,121 @@
+.navbar {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  z-index: 1000;
+  width: min(900px, calc(100% - 2rem));
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.8rem;
+  background: rgba(8, 10, 14, 0.68);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  padding: 0 1.25rem;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "SF Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  transition: color 0.25s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--accent);
+}
+
+.navbar-brand-icon {
+  color: var(--accent);
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.navbar-cursor {
+  width: 0.45rem;
+  height: 0.85rem;
+  margin-left: 0.05rem;
+  background: var(--accent);
+  animation: navbar-cursor-blink 1s steps(1) infinite;
+}
+
+@keyframes navbar-cursor-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  position: relative;
+  padding-bottom: 0.2rem;
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: var(--subtext);
+  transition: color 0.25s ease;
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: var(--accent);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    top: 0.75rem;
+    width: calc(100% - 1rem);
+  }
+
+  .navbar-inner {
+    padding: 0 1rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .navbar-link {
+    font-size: 0.68rem;
+  }
+}

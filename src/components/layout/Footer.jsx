@@ -1,42 +1,55 @@
-import { LinkedInIcon, GitHubIcon } from '../ui/Icons'
-import { Mail } from 'lucide-react'
+import { LinkedInIcon, GitHubIcon } from "../ui/Icons";
+import { Mail } from "lucide-react";
+import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="mt-28 border-t border-white/5 backdrop-blur bg-[color:var(--surface)]">
-      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
-        <div className="text-subtext text-center md:text-left">
-          © 2026 Stanly Silas
+    <footer className="footer">
+      <div className="footer-terminal">
+        <div className="footer-terminal-header">
+          <div className="footer-dots">
+            <span className="red" />
+            <span className="yellow" />
+            <span className="green" />
+          </div>
+
+          <span>stanly@stanworks:~/</span>
         </div>
-        <div className="text-subtext text-center">
-          Built with React, Tailwind, and Framer Motion
-        </div>
-        <div className="flex items-center gap-4 text-subtext">
-          <a
-            href="https://github.com/stanlysilas"
-            target="_blank"
-            className="p-2 rounded-full hover:bg-[color:var(--text)]/5 hover:text-primary transition"
-          >
-            <GitHubIcon className="w-[18px] h-[18px]" />
-          </a>
-          <a
-            href="https://linkedin.com/in/stanlysilas"
-            target="_blank"
-            className="p-2 rounded-full hover:bg-[color:var(--text)]/5 hover:text-primary transition"
-          >
-            <LinkedInIcon className="w-[18px] h-[18px]" />
-          </a>
-          <a
-            href="mailto:vstanlysilas@gmail.com"
-            className="p-2 rounded-full hover:bg-[color:var(--text)]/5 hover:text-primary transition"
-          >
-            <Mail size={18} />
-          </a>
+
+        <div className="footer-content">
+          <div className="footer-copyright">© 2026 Stanly Silas</div>
+
+          <div className="footer-built">
+            Built with React, Tailwind, and Framer Motion
+          </div>
+
+          <div className="footer-socials">
+            <a
+              href="https://github.com/stanlysilas"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <GitHubIcon />
+            </a>
+
+            <a
+              href="https://linkedin.com/in/stanlysilas"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+
+            <a href="mailto:vstanlysilas@gmail.com" aria-label="Email">
+              <Mail size={18} />
+            </a>
+          </div>
         </div>
       </div>
-      <div className="text-center text-xs text-subtext pb-6">
-        Designed & built by Stanly
-      </div>
+
+      <div className="footer-bottom">Designed & built by Stanly</div>
     </footer>
-  )
+  );
 }

@@ -1,0 +1,110 @@
+.projects-page {
+  width: min(1400px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 10rem 0 8rem;
+}
+
+.projects-page-header {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  column-gap: 5rem;
+  align-items: end;
+  margin-bottom: 5rem;
+}
+
+.projects-page-header .projects-index {
+  grid-column: 1 / -1;
+  margin-bottom: 1.5rem;
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--subtext);
+}
+
+.projects-page-header h1 {
+  margin: 0;
+  font-family: "SF Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.projects-page-header h1 em {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.projects-page-header p {
+  max-width: 460px;
+  justify-self: end;
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--subtext);
+}
+
+.projects-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.projects-page-item {
+  position: relative;
+  min-width: 0;
+}
+
+.projects-page-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .projects-page {
+    width: min(100% - 3rem, 900px);
+  }
+
+  .projects-page-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .projects-page-header p {
+    justify-self: start;
+  }
+
+  .projects-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-page {
+    width: min(100% - 2rem, 600px);
+    padding: 7rem 0 6rem;
+  }
+
+  .projects-page-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .projects-page-header h1 {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .projects-page-grid {
+    grid-template-columns: 1fr;
+  }
+}

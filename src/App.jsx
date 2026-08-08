@@ -3,12 +3,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect } from "react";
 import useSmoothScroll from './hooks/useSmoothScroll'
 
-import Home from './pages/Home'
-import Projects from './pages/Projects'
-import ProjectDetail from './pages/ProjectDetail'
+import Home from './pages/Home/Home'
+import Projects from './pages/Projects/Projects'
+import ProjectDetail from './pages/ProjectDetail/ProjectDetail'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import CursorGlow from './components/effects/CursorGlow'
+import Cursor from './components/effects/Cursor'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -49,7 +49,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <CursorGlow />
+      <Cursor />
       <Navbar />
       <AnimatedRoutes />
       <Footer />
