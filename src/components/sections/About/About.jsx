@@ -20,7 +20,7 @@ export default function About() {
 
             <div className="about-image">
               <img
-                src="/assets/profile.png"
+                src="/assets/profile.jpg"
                 alt="Stanworks profile"
                 draggable={false}
               />
