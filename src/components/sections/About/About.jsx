@@ -21,7 +21,7 @@ export default function About() {
             <div className="about-image">
               <img
                 src="/assets/profile.jpg"
-                alt="Stanworks profile"
+                alt="Portrait of Stanly Silas"
                 draggable={false}
               />
             </div>
@@ -39,67 +39,83 @@ export default function About() {
         </div>
 
         <div className="about-content">
-          <p className="about-label">~ about.me</p>
+          <p className="about-label">~ whoami</p>
 
           <h2>
-            Building systems with
+            Building software
             <br />
-            <em>clarity and intent.</em>
+            <em>with clarity and intent.</em>
           </h2>
 
           <p className="about-primary">
-            I’m a software engineer focused on building thoughtful, performant
-            applications, interfaces, and the systems behind them. I care about
-            clean architecture, maintainability, and turning complex ideas into
-            simple experiences.
+            I’m a software engineer interested in how software works beyond the
+            interface. My work spans Linux systems, hardware integration,
+            application development, and platform engineering. I enjoy
+            understanding complex systems, solving problems across different
+            layers of the software stack, and building tools that are reliable,
+            maintainable, and useful.
           </p>
 
           <p className="about-secondary">
-            My current stack spans React, JavaScript, Tailwind CSS, Framer
-            Motion, Flutter, Firebase, Linux, and system-level development. I
-            enjoy working across the stack, from interface design and
-            application architecture to infrastructure, open-source development,
-            and experimentation.
+            I work across Rust, Python, TypeScript, and Linux, with experience
+            in systems programming, desktop applications, web development, and
+            open-source software. I value practical engineering, thoughtful
+            architecture, and learning by building.
           </p>
 
           <div className="about-status">
-            <div>
+            <div className="about-status-heading">
               <span className="status-dot" />
-              Currently building
+              <span>Currently building</span>
             </div>
 
-            <span>BloomOS</span>
+            <div className="about-projects">
+              <div className="about-project">
+                <span className="about-project-name">Chronicle</span>
+                <span className="about-project-description">
+                  A platform for discovering projects and following their
+                  development.
+                </span>
+              </div>
+
+              <div className="about-project">
+                <span className="about-project-name">AcerCtl</span>
+                <span className="about-project-description">
+                  Linux hardware control and monitoring for Acer laptops.
+                </span>
+              </div>
+            </div>
           </div>
 
           <div className="about-stack">
             <div>
               <span>01</span>
-              React
+              Linux & Systems
             </div>
 
             <div>
               <span>02</span>
-              Flutter
+              Rust & Python
             </div>
 
             <div>
               <span>03</span>
-              JavaScript
+              Hardware Integration
             </div>
 
             <div>
               <span>04</span>
-              Firebase
+              TypeScript & React
             </div>
 
             <div>
               <span>05</span>
-              Android & Linux
+              Next.js & Supabase
             </div>
 
             <div>
               <span>06</span>
-              System Design
+              Platform Engineering
             </div>
           </div>
 

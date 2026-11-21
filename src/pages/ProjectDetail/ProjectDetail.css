@@ -114,6 +114,38 @@
   background: rgba(var(--accent-rgb), 0.06);
 }
 
+.project-status.live {
+  --status-rgb: 52, 199, 89;
+}
+
+.project-status.beta {
+  --status-rgb: 10, 132, 255;
+}
+
+.project-status.progress {
+  --status-rgb: 255, 159, 10;
+}
+
+.project-status.concept {
+  --status-rgb: 175, 82, 222;
+}
+
+.project-status.experimenting {
+  --status-rgb: 90, 200, 250;
+}
+
+.project-status.paused {
+  --status-rgb: 255, 149, 0;
+}
+
+.project-status.archived {
+  --status-rgb: 142, 142, 147;
+}
+
+.project-status.redacted {
+  --status-rgb: 255, 69, 58;
+}
+
 .project-status.live,
 .project-status.beta,
 .project-status.progress,
@@ -122,9 +154,9 @@
 .project-status.paused,
 .project-status.archived,
 .project-status.redacted {
-  color: var(--accent);
-  border-color: rgba(var(--accent-rgb), 0.25);
-  background: rgba(var(--accent-rgb), 0.06);
+  color: rgb(var(--status-rgb));
+  border-color: rgba(var(--status-rgb), 0.25);
+  background: rgba(var(--status-rgb), 0.08);
 }
 
 .project-explore {

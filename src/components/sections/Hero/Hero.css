@@ -7,6 +7,18 @@
   padding: 7rem 0 5rem;
 }
 
+.hero-extension {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero-title .navbar-cursor {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 0.08em;
+  height: 3rem;
+}
+
 .hero-grid {
   width: min(1400px, 100%);
   margin: 0 auto;

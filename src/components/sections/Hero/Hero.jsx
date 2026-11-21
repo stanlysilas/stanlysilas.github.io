@@ -1,8 +1,73 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 
 export default function Hero() {
+  const extensions = [
+    ".rpm",
+    ".deb",
+    ".ko",
+    ".so",
+    ".bin",
+    ".elf",
+    ".wasm",
+    ".tar.zst",
+    ".iso",
+    ".rs",
+    ".py",
+    ".tf",
+    ".nix",
+    ".yaml",
+    ".toml",
+    ".exe",
+    ".dmg",
+  ];
+
+  const [extension, setExtension] = useState(".rpm");
+  const history = useRef([".rpm"]);
+
+  useEffect(() => {
+    let current = ".rpm";
+    let target = "";
+    let deleting = false;
+    let pause = 12;
+
+    const interval = setInterval(() => {
+      if (pause > 0) {
+        pause--;
+        return;
+      }
+
+      if (deleting) {
+        current = current.slice(0, -1);
+        setExtension(current);
+
+        if (!current) {
+          deleting = false;
+          const available = extensions.filter(
+            (item) => !history.current.slice(-2).includes(item),
+          );
+
+          target = available[Math.floor(Math.random() * available.length)];
+          history.current.push(target);
+          history.current = history.current.slice(-2);
+        }
+
+        return;
+      }
+
+      current = target.slice(0, current.length + 1);
+      setExtension(current);
+
+      if (current === target) {
+        deleting = true;
+        pause = 12;
+      }
+    }, 110);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="hero" id="home">
       <div className="hero-grid">
@@ -19,18 +84,22 @@ export default function Hero() {
           </p>
 
           <h1 className="hero-title">
-            I make things
+            Software Engineer
             <br />
-            because I’m
+            building
             <br />
-            <em>curious</em> about
+            <em>
+              systems<span className="hero-extension">{extension}</span>
+              <span className="hero-extension-cursor navbar-cursor" />
+            </em>{" "}
             <br />
-            how they work.
+            that work from the ground up.
           </h1>
 
           <p className="hero-description">
-            Software engineer building thoughtful interfaces, scalable systems,
-            and software that solves real problems.
+            I work across Linux, Android, infrastructure, and application
+            software, with a focus on reliable systems and maintainable
+            engineering.
           </p>
 
           <div className="hero-actions">
@@ -72,27 +141,24 @@ export default function Hero() {
                 <p className="workspace-label">~ workspace.init</p>
 
                 <p>
-                  Software engineer focused on interfaces, architecture, and
-                  maintainable software.
+                  Exploring software beyond the interface, from Linux systems
+                  and hardware integration to application development.
                 </p>
 
-                <p>
-                  Working across React, Flutter, Linux, and the systems that
-                  connect them.
-                </p>
+                <p>Currently developing Chronicle and AcerCtl.</p>
 
-                <p className="workspace-status">→ cat /status</p>
+                <p className="workspace-status">→ ls ~/projects/active</p>
 
                 <div className="workspace-tags">
-                  <span>Building</span>
-                  <span>Learning</span>
-                  <span>Exploring</span>
+                  <span>Chronicle</span>
+                  <span>AcerCtl</span>
+                  <span>Linux & Systems</span>
                 </div>
               </div>
 
               <div className="workspace-image">
                 <img
-                  src="/hero-image.png"
+                  src="/hero-image.jpg"
                   alt="Stanworks workspace"
                   draggable={false}
                 />

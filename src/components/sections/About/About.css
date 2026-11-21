@@ -15,6 +15,39 @@
   position: relative;
 }
 
+.about-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.about-project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.about-project-name {
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.about-project-description {
+  color: var(--subtext);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .about-projects {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 .about-terminal {
   width: min(100%, 380px);
   overflow: hidden;
@@ -178,15 +211,21 @@
 
 .about-status {
   display: flex;
+  flex-direction: column;
+  font-family: "SF Mono", "SFMono-Regular", Consolas, monospace;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-status-heading {
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 650px;
-  margin-top: 2.5rem;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(var(--accent-rgb), 0.1);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.1);
-  font-family: monospace;
+  gap: 0.6rem;
+  color: var(--subtext);
   font-size: 0.8rem;
+  font-family: var(--font-mono);
 }
 
 .about-status > div {

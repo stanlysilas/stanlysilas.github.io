@@ -14,6 +14,17 @@ export default function ProjectCard({ project, embedded = false }) {
     });
   };
 
+  const statusStyles = {
+    live: "live",
+    beta: "beta",
+    "in progress": "progress",
+    concept: "concept",
+    experimenting: "experimenting",
+    paused: "paused",
+    archived: "archived",
+    redacted: "redacted",
+  };
+
   return (
     <Link
       to={`/projects/${project.slug}`}
@@ -38,7 +49,13 @@ export default function ProjectCard({ project, embedded = false }) {
             </div>
 
             {project.status && (
-              <span className="project-card-status">{project.status}</span>
+              <span
+                className={`project-status ${
+                  statusStyles[project.status] || "archived"
+                }`}
+              >
+                {project.status}
+              </span>
             )}
           </div>
         )}

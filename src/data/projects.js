@@ -1,5 +1,92 @@
 export const projects = [
   {
+    slug: "acerctl",
+    title: "AcerCtl",
+    description:
+      "A Linux hardware control and monitoring suite for Acer laptops, built with Rust and native system integrations",
+    tags: ["Rust", "Linux", "Systems Programming", "Hardware"],
+
+    image: "/assets/acerctl/acerctl-cover.png",
+
+    metrics: [
+      "Modular daemon, GUI, and kernel driver architecture",
+      "Native Linux hardware integration",
+      "Integrated hardware control and monitoring",
+    ],
+
+    problem:
+      "Acer laptop users on Linux often lack access to the hardware controls and device integrations available through manufacturer-specific software on other operating systems.",
+
+    approach:
+      "Developing a native Linux control suite that bridges hardware interfaces, kernel-level functionality, and a desktop application. AcerCtl uses a modular Rust architecture with a dedicated daemon, graphical interface, and DKMS kernel driver.",
+
+    features: [
+      "Hardware control and monitoring",
+      "Dedicated background daemon",
+      "Native desktop GUI built with Iced",
+      "Kernel driver integration through DKMS",
+      "Keyboard and RGB hardware integration",
+      "System tray and desktop integration",
+      "Modular hardware abstraction through libacercontrol",
+    ],
+
+    stack: ["Rust", "Linux", "Iced", "DKMS", "Linux Kernel"],
+
+    github: "https://github.com/stanlysilas/acer-control-center",
+    status: "Live",
+
+    images: [
+      "/assets/acerctl/acerctl-1.png",
+      "/assets/acerctl/acerctl-2.png",
+      "/assets/acerctl/acerctl-3.png",
+      "/assets/acerctl/acerctl-4.png",
+    ],
+  },
+
+  {
+    slug: "chronicle",
+    title: "Chronicle",
+    description:
+      "A project-centric platform for publishing development updates and documenting the evolution of software projects",
+    tags: ["Next.js", "TypeScript", "Supabase", "Platform"],
+
+    image: "/assets/chronicle/chronicle-cover.png",
+
+    metrics: [
+      "Project-centric publishing and development history",
+      "Public and private project visibility",
+      "Structured project updates with persistent URLs",
+    ],
+
+    problem:
+      "Software projects are often scattered across repositories, social platforms, and development logs, making it difficult to follow their progress and understand how they evolve over time.",
+
+    approach:
+      "Building a centralized, project-centric platform where developers can publish projects, document development milestones, and maintain a structured history of their work. Chronicle combines project discovery with persistent project pages and development records.",
+
+    features: [
+      "Project creation and management",
+      "Public and private project visibility",
+      "Development updates and project history",
+      "Active and archived project states",
+      "Project verification workflow",
+      "Persistent project and entry URLs",
+    ],
+
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL"],
+
+    status: "In progress",
+    github: "https://github.com/chronicleproject",
+    link: "https://chronicleproject.dpdns.org",
+
+    images: [
+      "/assets/chronicle/chronicle-1.png",
+      "/assets/chronicle/chronicle-2.png",
+      "/assets/chronicle/chronicle-3.png",
+    ],
+  },
+
+  {
     slug: "bloomos",
     title: "BloomOS",
     description:
@@ -45,7 +132,7 @@ export const projects = [
     github: "https://github.com/BloomOSLabs",
     link: "https://bloomoslabs.github.io/",
 
-    status: "Live",
+    status: "Archived",
 
     images: [
       "/assets/bloomos/bloomos-1.png",
@@ -86,9 +173,9 @@ export const projects = [
     stack: ["Flutter", "Firebase"],
 
     github: "https://github.com/stanlysilas/Bloom",
-    live: "https://bloom-da824.web.app/",
-    link: "https://bloomproductive.framer.website/",
-    status: "Paused",
+    // live: "https://bloom-da824.web.app/",
+    // link: "https://bloomproductive.framer.website/",
+    status: "Archived",
 
     images: [
       "/assets/bloom/bloom-1.png",
@@ -128,9 +215,9 @@ export const projects = [
     stack: ["Flutter", "Dart"],
 
     github: "https://github.com/stanlysilas/block_editor",
-    live: "https://stanworks.dpdns.org/block_editor/",
+    // live: "https://stanworks.dpdns.org/block_editor/",
     link: "https://pub.dev/packages/block_editor",
-    status: "Beta",
+    status: "Archived",
 
     images: [
       "/assets/block-editor/block-editor-1.png",
@@ -170,8 +257,8 @@ export const projects = [
     stack: ["Linux", "Fedora", "GNOME"],
 
     github: "https://github.com/stanlysilas/AetherOS",
-    live: "",
-    status: "Experimenting",
+    // live: "",
+    status: "Archived",
 
     images: [],
   },
@@ -243,8 +330,8 @@ export const projects = [
     stack: ["Flutter"],
 
     github: "https://github.com/stanlysilas/Flow-Launcher",
-    live: "",
-    status: "Paused",
+    // live: "",
+    status: "Archived",
 
     images: [],
   },

@@ -42,14 +42,6 @@
   opacity: 0.9;
 }
 
-.navbar-cursor {
-  width: 0.45rem;
-  height: 0.85rem;
-  margin-left: 0.05rem;
-  background: var(--accent);
-  animation: navbar-cursor-blink 1s steps(1) infinite;
-}
-
 @keyframes navbar-cursor-blink {
   0%,
   45% {

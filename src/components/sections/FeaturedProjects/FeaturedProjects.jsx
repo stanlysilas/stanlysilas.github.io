@@ -48,7 +48,7 @@ export default function FeaturedProjects() {
                 {String(index + 1).padStart(2, "0")}
               </div>
 
-              <ProjectCard project={project} embedded />
+              <ProjectCard project={project} />
             </div>
           ))}
         </div>

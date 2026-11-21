@@ -43,6 +43,14 @@ a {
   );
 }
 
+.navbar-cursor {
+  width: 0.45rem;
+  height: 0.85rem;
+  margin-left: 0.05rem;
+  background: var(--accent);
+  animation: navbar-cursor-blink 1s steps(1) infinite;
+}
+
 .text-accent {
   color: var(--accent);
 }
@@ -206,14 +214,19 @@ body {
 #root::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -22px;
   pointer-events: none;
   z-index: -1;
-  background-image:
-    linear-gradient(rgba(var(--accent-rgb), 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--accent-rgb), 0.055) 1px, transparent 1px);
-  background-size: 64px 64px;
+  background-image: radial-gradient(
+    circle,
+    rgba(var(--accent-rgb), 0.22) 1px,
+    transparent 1.35px
+  );
+  background-size: 14px 14px;
   mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  animation:
+    dot-matrix-drift 12s linear infinite,
+    dot-matrix-pulse 3.6s ease-in-out infinite alternate;
 }
 
 #root::after {
@@ -242,20 +255,32 @@ body {
   animation: ambient-drift 20s ease-in-out infinite alternate;
 }
 
-@keyframes ambient-drift {
+@keyframes dot-matrix-drift {
   0% {
-    transform: translate3d(-1%, -0.5%, 0);
+    background-position: 0 0;
   }
 
   100% {
-    transform: translate3d(1%, 0.5%, 0);
+    background-position: 14px 14px;
+  }
+}
+
+@keyframes dot-matrix-pulse {
+  from {
+    opacity: 0.42;
+  }
+
+  to {
+    opacity: 0.95;
   }
 }
 
 .light #root::before {
-  background-image:
-    linear-gradient(rgba(var(--accent-rgb), 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--accent-rgb), 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(var(--accent-rgb), 0.2) 1px,
+    transparent 1.35px
+  );
 }
 
 .light #root::after {
@@ -276,6 +301,13 @@ body {
       transparent 5px,
       rgba(var(--accent-rgb), 0.012) 6px
     );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root::before,
+  #root::after {
+    animation: none;
+  }
 }
 
 .profile-image {
